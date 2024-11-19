@@ -11,7 +11,7 @@ export default function DnsTable() {
 
     // Fetch DNS results from the API
     useEffect(() => {
-        axios.get('http://localhost:3000/api/dns-results')  // Adjust to your backend URL
+        axios.get(`${process.env.NEXT_PUBLIC_API_URL}/api/dns-results`)  // Adjust to your backend URL
             .then(response => setDnsResults(response.data))
             .catch(error => console.error("Error fetching DNS results:", error));
     }, []);
